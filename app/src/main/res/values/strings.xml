@@ -28,16 +28,16 @@
     <string name="quest_contacts_title">Contacts</string>
     <string name="quest_phone"><![CDATA[+&(&&&)&&&&&&&]]></string>
     <string name="quest_address">ETU</string>
-    <string name="quest_reserve_button">Book</string>
+    <string name="quest_reserve_button">Reserve</string>
     <string name="quest_company_name">Company</string>
     <string name="quest_name">Quest</string>
     <string name="quest_people_number">6–10</string>
-    <string name="quest_duration">55</string>
+    <string name="quest_duration">55 min</string>
     <string name="quest_difficutly">FUCKING INSANE</string>
     <string name="loading_text">Searching for results…</string>
     <string name="loading_image_cd">Looking…</string>
     <string name="quest_image_cd">image</string>
-    <string name="filter_name_hint">Quest name</string>
+    <string name="quest_list_name_hint">Quest name</string>
     <string name="filter_genres_hint">City</string>
     <string name="filter_price">Price</string>
     <string name="filter_people_num">People number</string>
@@ -115,4 +115,14 @@
     <string name="reserved">Reserved</string>
     <string name="favourites">Liked</string>
     <string name="profile">Profile</string>
+
+    <!--New user page-->
+    <string name="newuser_label">Fuck You</string>
+    <string name="newuser_signup">Sign up</string>
+    <string name="newuser_enter">Sign in</string>
+
+    <string name="quest_list_button">Filter</string>
+    <string name="quest_item_button">More information</string>
+
+    <string name="about_label">Strawberry milk!</string>
 </resources>

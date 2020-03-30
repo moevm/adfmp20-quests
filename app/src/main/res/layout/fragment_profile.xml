@@ -21,24 +21,28 @@
             android:text="@string/profile_nickname"/>
 
         <Button
+            android:id="@+id/profile_account_setting_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/profile_account_settings">
         </Button>
 
         <Button
+            android:id="@+id/profile_account_preferences_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/profile_preferences">
         </Button>
 
         <Button
+            android:id="@+id/profile_account_about_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/profile_about">
         </Button>
 
         <Button
+            android:id="@+id/profile_account_logout_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/profile_logout"

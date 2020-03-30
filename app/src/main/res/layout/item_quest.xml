@@ -22,7 +22,7 @@
             <!-- Something -->
         </ImageView>
 
-        <include layout="@layout/quest_main_info"/>
+        <include layout="@layout/include_quest_main_info" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,10 +38,10 @@
                 android:layout_height="wrap_content" />
 
             <Button
+                android:id="@+id/quest_item_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/quest_reserve_button"/>
-
+                android:text="@string/quest_item_button"/>
         </LinearLayout>
     </LinearLayout>
 

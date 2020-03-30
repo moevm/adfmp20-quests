@@ -1,53 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".PaymentFragment">
 
-    <!-- TOOLBAR -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
 
-        <ImageView
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/quest_image_cd"
-            android:gravity="center"
-            android:src="@drawable/gin"
-            android:scaleType="centerInside">
-            <!-- Something -->
-        </ImageView>
+            android:hint="@string/payment_page_quest_name"/>
 
-        <include layout="@layout/quest_main_info"/>
-
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/quest_description"/>
+            android:hint="@string/payment_page_card_name"/>
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/quest_contacts_title"/>
+            android:hint="@string/payment_page_card_date"/>
 
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/quest_phone"/>
+            android:hint="@string/payment_page_card_cvc"/>
 
-        <TextView
+        <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/quest_address"/>
+            android:text="@string/payment_page_save_card"/>
 
         <Button
+            android:id="@+id/payment_pay_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/quest_reserve_button"/>
+            android:text="@string/payment_page_pay"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
