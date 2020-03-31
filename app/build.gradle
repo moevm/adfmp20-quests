@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -30,11 +31,18 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+
     }
     kotlinOptions {
         jvmTarget = "1.8"
     }
 
+}
+
+repositories {
+    maven {
+        url "http://maven.google.com/"
+    }
 }
 
 dependencies {
@@ -50,4 +58,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    // Основная библиотека MapKit.
+    implementation 'com.yandex.android:mapkit:3.5.0'
+    // Дополнительные модули MapKit.
+    // Удалите зависимости если ваше приложение не использует их.
+    implementation 'com.yandex.android:directions:3.5.0'
+    implementation 'com.yandex.android:places:3.5.0'
+    implementation 'com.yandex.android:search:3.5.0'
+    implementation 'com.yandex.android:transport:3.5.0'
 }
