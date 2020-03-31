@@ -7,7 +7,7 @@
     <string name="email_hint">E-mail</string>
     <string name="phone_hint">Phone</string>
     <string name="password_hint">Password</string>
-    <string name="to_sign_in">The fuck am i doing here?</string>
+    <string name="to_sign_in">What am i doing here?</string>
     <string name="reg_button">Sing up</string>
     <string name="social">Through</string>
     <string name="google">social_net_1</string>
@@ -33,7 +33,7 @@
     <string name="quest_name">Quest</string>
     <string name="quest_people_number">6–10</string>
     <string name="quest_duration">55 min</string>
-    <string name="quest_difficutly">FUCKING INSANE</string>
+    <string name="quest_difficutly">INSANE</string>
     <string name="loading_text">Searching for results…</string>
     <string name="loading_image_cd">Looking…</string>
     <string name="quest_image_cd">image</string>
@@ -69,7 +69,7 @@
     <string name="reserved_item_price_label">Price</string>
     <string name="reserved_item_price">-1</string>
     <string name="reserved_item_order_status_label">Status</string>
-    <string name="reserved_item_order_status">Ded</string>
+    <string name="reserved_item_order_status"> Ded</string>
     <string name="reserved_item_details">Details</string>
     <string name="reserved_item_cancel">Cancel</string>
     <string name="profile_title">Me</string>
@@ -117,7 +117,7 @@
     <string name="profile">Profile</string>
 
     <!--New user page-->
-    <string name="newuser_label">Fuck You</string>
+    <string name="newuser_label">Hello</string>
     <string name="newuser_signup">Sign up</string>
     <string name="newuser_enter">Sign in</string>
 
