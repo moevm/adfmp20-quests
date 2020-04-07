@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.yandex.android:runtime:3.5.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/96470631d3ef94591cb77fcd75bf61d9/jetified-runtime-3.5.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/96470631d3ef94591cb77fcd75bf61d9/jetified-runtime-3.5.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
