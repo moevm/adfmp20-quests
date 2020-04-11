@@ -7,9 +7,9 @@
     <string name="email_hint">E-mail</string>
     <string name="phone_hint">Phone</string>
     <string name="password_hint">Password</string>
-    <string name="to_sign_in">What am i doing here?</string>
+    <string name="to_sign_in">I am already have account</string>
     <string name="reg_button">Sing up</string>
-    <string name="social">Through</string>
+    <string name="social">Through social networks</string>
     <string name="google">social_net_1</string>
     <string name="icq">social_net_2</string>
     <string name="registration_title">Sign Up</string>
@@ -17,12 +17,12 @@
     <!--Login-->
     <string name="login_title">Login</string>
     <string name="login_name_hint">Phone/e-mail</string>
-    <string name="password_reminder">Forgot my precious password</string>
+    <string name="password_reminder">Forgot my password</string>
     <string name="login_button">Login</string>
     <string name="password_restore_title">Password restore</string>
     <string name="restore_button">Restore</string>
-    <string name="password_restore_text">No time to explain, enter your e-mail</string>
-    <string name="password_restore_text_finish">Password *something* was sent to your email</string>
+    <string name="password_restore_text">Enter your e-mail so we can send you password reset instructions</string>
+    <string name="password_restore_text_finish">Instructions were sent to your email</string>
     <string name="password_restore_finish_return_button">Return to Login</string>
     <string name="quest_description">fffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffffffffffgffffffffffffffffffffffffffgfffffffffffffffffffffff</string>
     <string name="quest_contacts_title">Contacts</string>
@@ -53,8 +53,8 @@
     <string name="booking_comment">Comment</string>
     <string name="booking_button">Reserve</string>
     <string name="booking_price_title">Price:   </string>
-    <string name="booking_price_placeholed">Your kids</string>
-    <string name="booking_license_agreement">Take my soul</string>
+    <string name="booking_price_placeholed">1500 per person</string>
+    <string name="booking_license_agreement">Accept license agreement</string>
     <string name="map_button">More</string>
     <string name="map_quest_name">QuestName</string>
     <string name="reserved_list_active">Active</string>
@@ -80,7 +80,7 @@
     <string name="profile_nickname">Hooman</string>
     <string name="success_label">Success</string>
     <string name="success_to_orders">To orders</string>
-    <string name="success_to_pay">Pay the price or die horribly</string>
+    <string name="success_to_pay">Proceed to payment details</string>
     <string name="success_image">image</string>
     <string name="reserved_item_payment">Pay</string>
     <string name="payment_page_quest_name">0000 0000 0000 0000</string>
