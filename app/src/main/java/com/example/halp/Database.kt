@@ -25,6 +25,11 @@ class Database
         }
         return string
     }
+
+    private fun getCollection(): CoroutineCollection<DatabaseCollectionItem>{
+        return this.collection
+    }
+
 }
 
 
