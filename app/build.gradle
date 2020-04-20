@@ -41,9 +41,7 @@ android {
 }
 
 repositories {
-    maven {
-        url "http://maven.google.com/"
-    }
+    mavenCentral()
 }
 
 dependencies {
