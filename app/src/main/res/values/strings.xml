@@ -34,7 +34,7 @@
     <string name="quest_people_number">6–10</string>
     <string name="quest_duration">55 min</string>
     <string name="quest_difficutly">INSANE</string>
-    <string name="loading_text">Searching for results…</string>
+    <string name="loading_text">Ti kto takoi? Иди регайся</string>
     <string name="loading_image_cd">Looking…</string>
     <string name="quest_image_cd">image</string>
     <string name="quest_list_name_hint">Quest name</string>

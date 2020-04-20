@@ -1,21 +1,19 @@
 package com.example.halp
 
-class Quest {
+import com.google.firebase.firestore.GeoPoint
+
+class Quest
+{
+    var id = ""
     var name = ""
     var description = ""
     var duration: Number = 0
-    var min_p: Number = 0
-    var max_p: Number = 0
+    var min_people: Number = 0
+    var max_people: Number = 0
     var company = ""
     var complexity = ""
     var genre = ""
-    private var cost = 0f
-
-    fun getCost(): Number {
-        return cost
-    }
-
-    fun setCost(cost: Float) {
-        this.cost = cost
-    }
+    var address: GeoPoint = GeoPoint(0.0,0.0)
+    var cost: Number = 0
+    var img_url = ""
 }

@@ -50,20 +50,20 @@ class AccountSettingsFragment : Fragment() {
             if(new_password.isNotEmpty())
                 upd["new_password"] = new_password
 
-            if( old_password == activity.user.password && !skip ) {
+            if( old_password == activity.user?.password  && !skip ) {
                 if (mail.isNotEmpty()) {
                     activity.db.collection("users")
                         .whereEqualTo("mail", mail)
                         .get()
                         .addOnSuccessListener { querySnapshot ->
                             if (querySnapshot.isEmpty)
-                                activity.user.id?.let {
+                                activity.user?.id?.let {
                                     activity.db.collection("users")
                                         .document(it).update(upd)
                                 }
                         }
                 } else
-                    activity.user.id?.let {
+                    activity.user?.id?.let {
                         activity.db.collection("users")
                             .document(it).update(upd)
                     }

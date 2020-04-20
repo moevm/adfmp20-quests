@@ -14,6 +14,8 @@ class ProfileFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
+        val act = activity as MainActivity
+
         view.findViewById<Button>(R.id.profile_account_setting_button).setOnClickListener { v ->
             v.findNavController().navigate(R.id.action_navigation_profile_to_accountSettingsFragment)
         }
@@ -27,13 +29,16 @@ class ProfileFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.profile_account_logout_button).setOnClickListener { v ->
+            act.user = null
             v.findNavController().navigate(R.id.action_navigation_profile_to_newUserFragment)
         }
-
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val act = activity as MainActivity
+        if( act.user == null )
+            view.findNavController().navigate(R.id.newUserFragment)
     }
 }
