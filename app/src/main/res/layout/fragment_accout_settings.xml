@@ -19,21 +19,25 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/as_name"
             android:hint="@string/account_settings_name"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/as_mail"
             android:hint="@string/account_settings_email"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/as_phone"
             android:hint="@string/account_settings_phone"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/as_birthday"
             android:hint="@string/account_settings_birthday"/>
 
         <TextView
@@ -44,11 +48,13 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/as_old_password"
             android:hint="@string/account_settings_old_password"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/as_new_password"
             android:hint="@string/account_settings_password"/>
 
         <Button
