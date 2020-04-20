@@ -2,17 +2,25 @@ package com.example.halp
 
 import android.os.Bundle
 import android.view.Window
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity()
 {
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var database: DatabaseReference
+    private lateinit var user: User
+
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
+
+        val database = FirebaseDatabase.getInstance()
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
         supportActionBar?.hide(); //hide the title bar
