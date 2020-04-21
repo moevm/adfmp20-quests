@@ -51,7 +51,7 @@ class BookingFragment : Fragment() {
         o.people = view?.findViewById<TextInputEditText>(R.id.booking_people)?.text.toString().toInt()
         o.quest_id = act.quest?.id
         o.order_date = Date()
-        o.quest_date = view?.findViewById<DatePicker>(R.id.booking_date_picker)
+       // o.quest_date = view?.findViewById<DatePicker>(R.id.booking_date_picker)
 
     }
 }

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.findNavController
+import kotlinx.android.synthetic.main.fragment_quest_card.*
 
 class QuestCardFragment : Fragment() {
 
@@ -31,6 +32,11 @@ class QuestCardFragment : Fragment() {
             view.findViewById<Button>(R.id.quest_card_booking_button).visibility = View.INVISIBLE;
 
         setFields(act.quest, view);
+
+        quest_card_map_button.setOnClickListener { v ->
+            //val coord = act.quest.coords
+            v.findNavController().navigate(R.id.navigation_map)
+        }
     }
 
     fun setFields(q: Quest?, v: View){

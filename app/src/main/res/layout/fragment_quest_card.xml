@@ -55,6 +55,13 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/quest_card_address"
                     android:text="@string/quest_address"/>
+
+                <Button
+                    android:id="@+id/quest_card_map_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="display address on map"/>
+
                 <Button
                     android:id="@+id/quest_card_booking_button"
                     android:layout_width="match_parent"

@@ -1,7 +1,14 @@
 package com.example.halp
 
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.Window
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,6 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.GeoPoint
 import com.google.protobuf.LazyStringArrayList
 import kotlin.random.Random
+private const val PERMISSION_REQUEST = 10
 
 class MainActivity : AppCompatActivity()
 {
@@ -20,9 +28,52 @@ class MainActivity : AppCompatActivity()
     public var quest: Quest? = null
     lateinit var appBarConfiguration: AppBarConfiguration
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    private var permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
+    fun checkPermission(context: Context, permissionArray: Array<String>) : Boolean{
+        var allSuccess = true
+        for(i in permissionArray.indices) {
+            if(checkCallingOrSelfPermission(permissionArray[1]) == PackageManager.PERMISSION_DENIED) {
+                allSuccess = false
+            }
+        }
+        return allSuccess
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(requestCode == PERMISSION_REQUEST) {
+            var allSuccess = true
+            for(i in permissions.indices) {
+                if(grantResults[i] == PackageManager.PERMISSION_DENIED) {
+                    allSuccess = false
+                    var requesrAgain = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(permissions[i])
+                    if(requesrAgain) {
+                        Toast.makeText(this.applicationContext, "Permission denied", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this.applicationContext, "Go to settings and enable the permission", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+            if(allSuccess){
+                Toast.makeText(this.applicationContext, "Permissions Granted", Toast.LENGTH_SHORT).show()
+
+            }
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkPermission(this.applicationContext, permissions)) {
+
+            } else {
+                requestPermissions(permissions, PERMISSION_REQUEST)
+            }
+        }
 
         db = FirebaseFirestore.getInstance();
 

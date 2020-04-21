@@ -1,6 +1,7 @@
 package com.example.halp
 
 import com.google.firebase.firestore.GeoPoint
+import com.yandex.mapkit.geometry.Point
 
 class Quest
 {
@@ -13,6 +14,7 @@ class Quest
     var company = ""
     var complexity = ""
     var genre = ""
+    var coords: Point = Point(59.945933,30.320045)
     var address: String = ""
     var cost: Number = 0
     var phone: String = ""
