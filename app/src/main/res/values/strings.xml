@@ -125,4 +125,5 @@
     <string name="quest_item_button">More information</string>
 
     <string name="about_label">Strawberry milk!</string>
+    <string name="quest_item_like">Like</string>
 </resources>

@@ -12,5 +12,4 @@ class User {
     var favourites: ArrayList<String> = ArrayList<String>()
     var orders: ArrayList<Order> = ArrayList<Order>()
 
-
 }

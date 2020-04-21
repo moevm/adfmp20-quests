@@ -34,6 +34,7 @@
                 <include layout="@layout/include_quest_main_info"/>
 
                 <TextView
+                    android:id="@+id/quest_card_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/quest_description"/>
@@ -46,11 +47,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/quest_card_phone"
                     android:text="@string/quest_phone"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/quest_card_address"
                     android:text="@string/quest_address"/>
                 <Button
                     android:id="@+id/quest_card_booking_button"

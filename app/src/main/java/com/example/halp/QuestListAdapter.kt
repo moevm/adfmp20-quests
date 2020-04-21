@@ -1,14 +1,17 @@
 package com.example.halp
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.FirebaseFirestore
 
-class QuestListAdapter(val quests: ArrayList<Quest>) :
+class QuestListAdapter(val quests: ArrayList<Quest>, var act: MainActivity) :
     RecyclerView.Adapter<QuestListAdapter.QuestItemHolder>()
 {
 
@@ -21,6 +24,7 @@ class QuestListAdapter(val quests: ArrayList<Quest>) :
         var duration: TextView = view.findViewById(R.id.quest_item_duration)
         var complexity: TextView = view.findViewById(R.id.quest_item_complexity)
         var cost: TextView = view.findViewById(R.id.quest_item_cost)
+        var like: Button = view.findViewById(R.id.quest_item_like)
 
         var informationButton: Button = view.findViewById(R.id.quest_item_button)
         var image: ImageView = view.findViewById(R.id.quest_item_image)
@@ -42,5 +46,40 @@ class QuestListAdapter(val quests: ArrayList<Quest>) :
         holder.complexity.text = quests[position].complexity
         holder.duration.text = (quests[position].duration.toString() + " min")
         holder.cost.text = quests[position].cost.toString()
-    }
+
+        holder.informationButton.setOnClickListener { v ->
+            act.quest = quests[position]
+            v.findNavController().navigate(R.id.questCardFragment)
+        }
+
+        if( act.user == null )
+            holder.like.visibility = View.INVISIBLE;
+        else
+            {
+                //Sets buttons color to red
+                if( act.user!!.favourites.contains(quests[position].id) )
+                    holder.like.setBackgroundColor(Color.RED)
+                else
+                    holder.like.setBackgroundResource(android.R.drawable.btn_default)
+
+
+                holder.like.setOnClickListener {
+                    if( act.user!!.favourites.contains(quests[position].id) )
+                    {
+                        act.user!!.favourites.remove(quests[position].id)
+                        holder.like.setBackgroundResource(android.R.drawable.btn_default)
+                    }
+                    else
+                    {
+                        act.user!!.favourites.add(quests[position].id)
+                        holder.like.setBackgroundColor(Color.RED)
+                    }
+
+                    act.user!!.id?.let {
+                        it1 -> act.db.collection("users")
+                    .document(it1).update("favourites", act.user!!.favourites)
+                    }
+                }
+            }
+        }
 }

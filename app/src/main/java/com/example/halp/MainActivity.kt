@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity()
 {
     public lateinit var db: FirebaseFirestore
     public var user: User? = null
+    public var quest: Quest? = null
     lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?)
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity()
         val company = arrayOf("A", "B", "C")
         val desc = arrayOf("descA", "descB", "descC")
         val genre = arrayOf("genreA", "genreB", "genreC")
-        var names = arrayOf("Athyes Pharcey",
+        val names = arrayOf("Athyes Pharcey",
                 "Gery",
                 "Gerey",
                 "Ealher" ,
@@ -60,7 +61,8 @@ class MainActivity : AppCompatActivity()
                 "genre" to genre[Random.nextInt(0,2)],
                 "img_url" to pics[Random.nextInt(0,4)],
                 "cost" to Random.nextInt(200,1500),
-                "address" to GeoPoint(Random.nextDouble(-90.0, 90.0), Random.nextDouble(-180.0, 180.0))
+                "address" to "address",
+                "phone" to "9(999)9999999"
             )
             db.collection("quests").add(q)
         }*/

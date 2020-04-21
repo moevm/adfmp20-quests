@@ -23,13 +23,10 @@
             android:layout_gravity="center"
             android:text="@string/quest_list_button"/>
 
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <include layout="@layout/item_quest"/>
-
-        </ScrollView>
+            android:layout_height="match_parent"
+            android:id="@+id/quest_list_recycle"/>
 
     </LinearLayout>
 

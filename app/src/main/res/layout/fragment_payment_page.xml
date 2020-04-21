@@ -33,11 +33,6 @@
             android:layout_height="wrap_content"
             android:hint="@string/payment_page_card_cvc"/>
 
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/payment_page_save_card"/>
-
         <Button
             android:id="@+id/payment_pay_button"
             android:layout_width="match_parent"

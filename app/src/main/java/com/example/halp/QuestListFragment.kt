@@ -23,9 +23,6 @@ class QuestListFragment : Fragment() {
         }
 
         updateList(view);
-        /*view.findViewById<Button>(R.id.quest_item_button).setOnClickListener { v ->
-            v.findNavController().navigate(R.id.action_navigation_search_to_questCardFragment)
-        }*/
 
         return view
     }
@@ -46,23 +43,19 @@ class QuestListFragment : Fragment() {
                     q.company =  doc["company"] as String
                     q.complexity =  doc["complexity"] as String
                     q.genre =  doc["genre"] as String
-                    q.address = doc["address"] as GeoPoint
+                    q.address = doc["address"] as String
                     q.cost = doc["cost"] as Number
+                    q.phone = doc["phone"] as String
                     q.img_url =  doc["img_url"] as String
                 quests.add(q)
             }
         }
 
         val rv: RecyclerView = v.findViewById(R.id.quest_list_recycle)
-        val rva = QuestListAdapter(quests)
+        val rva = QuestListAdapter(quests, act)
         rv.adapter = rva
         rv.layoutManager = LinearLayoutManager(context)
     }
-
-/*    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        view?.let { updateList(it) }
-    }*/
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

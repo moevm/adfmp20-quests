@@ -13,7 +13,8 @@ class Quest
     var company = ""
     var complexity = ""
     var genre = ""
-    var address: GeoPoint = GeoPoint(0.0,0.0)
+    var address: String = ""
     var cost: Number = 0
+    var phone: String = ""
     var img_url = ""
 }
