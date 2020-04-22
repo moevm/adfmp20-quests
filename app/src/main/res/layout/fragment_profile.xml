@@ -27,12 +27,12 @@
             android:text="@string/profile_account_settings">
         </Button>
 
-        <Button
+        <!--<Button
             android:id="@+id/profile_account_preferences_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/profile_preferences">
-        </Button>
+        </Button>-->
 
         <Button
             android:id="@+id/profile_account_about_button"

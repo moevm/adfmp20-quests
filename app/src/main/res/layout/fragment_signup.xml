@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:text="@string/reg_button"/>
 
-        <include layout="@layout/include_social_networks" />
+        <!--<include layout="@layout/include_social_networks" />-->
 
 
     </LinearLayout>
