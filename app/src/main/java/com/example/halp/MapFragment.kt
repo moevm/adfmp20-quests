@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import android.widget.TextView.OnEditorActionListener
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -50,7 +51,7 @@ import kotlinx.android.synthetic.main.fragment_map.*
 import java.util.*
 
 class MapFragment : Fragment(), UserLocationObjectListener,
-    RouteListener, SearchListener, CameraListener, DrivingSession.DrivingRouteListener {
+    RouteListener, DrivingSession.DrivingRouteListener {
 
     private val MAPKIT_API_KEY = "161a85a8-6f5e-475b-9b54-7e43cb5cde73"
 
@@ -68,7 +69,7 @@ class MapFragment : Fragment(), UserLocationObjectListener,
     private var userLocationLayer: UserLocationLayer? = null
 
     lateinit var mFusedLocationClient: FusedLocationProviderClient
-
+    /*
     lateinit var searchManager: SearchManager
     private var searchSession: com.yandex.mapkit.search.Session? = null
 
@@ -80,7 +81,7 @@ class MapFragment : Fragment(), UserLocationObjectListener,
             this
         )
     }
-
+    */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(false)
@@ -129,9 +130,14 @@ class MapFragment : Fragment(), UserLocationObjectListener,
         //mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this.activity!!)
         //getLastLocation()
 
+
+        if (act.quest != null) {
+            map_quest_name.setText(act.quest!!.name)
+        }
         more_quest.setOnClickListener { v ->
             v.findNavController().navigate(R.id.questCardFragment)
         }
+
         /*
         if(mapview != null){mapview.map.move(
             CameraPosition(CURRENT_LOCATION, 14.0f, 0.0f, 0.0f),
@@ -152,7 +158,7 @@ class MapFragment : Fragment(), UserLocationObjectListener,
         mtRouter!!.requestRoutes(points, options, this as Session.RouteListener)
         */
         /* User Coords */
-
+        /*
         searchManager = SearchFactory.getInstance().createSearchManager(SearchManagerType.COMBINED)
         mapview.map.addCameraListener(this)
         search_edit.setOnEditorActionListener(OnEditorActionListener { textView, actionId, keyEvent ->
@@ -161,7 +167,7 @@ class MapFragment : Fragment(), UserLocationObjectListener,
             }
             false
         })
-
+        */
     }
 
 
@@ -335,11 +341,11 @@ class MapFragment : Fragment(), UserLocationObjectListener,
             mtRouter!!.requestRoutes(points, options, this as Session.RouteListener)
 
              */
-           // submitRequest()
+            submitRequest()
         }
     }
 
-
+    /*
     override fun onSearchResponse(response: Response) {
         val mapObjects: MapObjectCollection = mapview.getMap().getMapObjects()
         //mapObjects.clear()
@@ -375,7 +381,7 @@ class MapFragment : Fragment(), UserLocationObjectListener,
             submitQuery(search_edit.getText().toString())
         }
     }
-
+    */
     override fun onDrivingRoutes(routes: List<DrivingRoute>) {
         for (route in routes) mapObjects.addPolyline(route.geometry)
     }
