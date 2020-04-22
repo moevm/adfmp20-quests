@@ -18,16 +18,20 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.GeoPoint
 import com.google.protobuf.LazyStringArrayList
+import com.yandex.mapkit.geometry.Point
 import kotlin.random.Random
 
 private const val PERMISSION_REQUEST = 10
 
 class MainActivity : AppCompatActivity()
 {
-    public lateinit var db: FirebaseFirestore
-    public var user: User? = null
-    public var quest: Quest? = null
-    public var orderNum: Int = -1
+    var db: FirebaseFirestore = FirebaseFirestore.getInstance()
+    var user: User? = null
+    var quest: Quest? = null
+    var orderNum: Int = -1
+    var filterQuests: QuestFilter? = null;
+    var filterFavourites: QuestFilter? = null;
+
 
     lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -78,48 +82,7 @@ class MainActivity : AppCompatActivity()
             }
         }
 
-        db = FirebaseFirestore.getInstance();
-
-        /*val pics = arrayOf("https://firebasestorage.googleapis.com/v0/b/quests-15b53.appspot.com/o/1464773721129589536.jpg?alt=media&token=c0cde0b6-512b-489d-aeb6-c45be6164ff7",
-            "https://firebasestorage.googleapis.com/v0/b/quests-15b53.appspot.com/o/2.jpg?alt=media&token=ed1f46c1-ed76-4af5-b5c1-5bbbf26a6418",
-        "https://firebasestorage.googleapis.com/v0/b/quests-15b53.appspot.com/o/NINTCHDBPICT000568507868.jpg?alt=media&token=24d63657-bdc2-4425-8d87-1e4e3d482ec3",
-        "https://firebasestorage.googleapis.com/v0/b/quests-15b53.appspot.com/o/maxresdefault.jpg?alt=media&token=8556a9a3-6dfa-4743-9475-3a7f2f2cf710",
-        "https://firebasestorage.googleapis.com/v0/b/quests-15b53.appspot.com/o/solo-levelling-feature.jpg?alt=media&token=a57c6bb6-a02b-406e-927c-361155cecd07")
-
-        val complexity = arrayOf("Low", "High", "Medium", "Extreme")
-        val company = arrayOf("A", "B", "C")
-        val desc = arrayOf("descA", "descB", "descC")
-        val genre = arrayOf("genreA", "genreB", "genreC")
-        val names = arrayOf("Athyes Pharcey",
-                "Gery",
-                "Gerey",
-                "Ealher" ,
-                "Jamas" ,
-                "Reyny",
-                "Atham",
-                "Amew",
-                "Wynstio",
-                "Thony")
-
-        val source = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        for( x in 0 until 50 )
-        {
-            val q = hashMapOf(
-                "max_people" to Random.nextInt(1, 7),
-                "min_people" to Random.nextInt(8, 15),
-                "name" to names[Random.nextInt(0,6)],
-                "complexity" to complexity[Random.nextInt(0,3)],
-                "company" to company[Random.nextInt(0,2)],
-                "description" to desc[Random.nextInt(0,2)],
-                "duration" to Random.nextInt(30, 180),
-                "genre" to genre[Random.nextInt(0,2)],
-                "img_url" to pics[Random.nextInt(0,4)],
-                "cost" to Random.nextInt(200,1500),
-                "address" to "address",
-                "phone" to "9(999)9999999"
-            )
-            db.collection("quests").add(q)
-        }*/
+        //randomFill();
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
         supportActionBar?.hide(); //hide the title bar
@@ -135,5 +98,49 @@ class MainActivity : AppCompatActivity()
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    fun randomFill()
+    {
+        val pics = arrayOf("https://firebasestorage.googleapis.com/v0/b/quests-15b53.appspot.com/o/1464773721129589536.jpg?alt=media&token=c0cde0b6-512b-489d-aeb6-c45be6164ff7",
+            "https://firebasestorage.googleapis.com/v0/b/quests-15b53.appspot.com/o/2.jpg?alt=media&token=ed1f46c1-ed76-4af5-b5c1-5bbbf26a6418",
+            "https://firebasestorage.googleapis.com/v0/b/quests-15b53.appspot.com/o/NINTCHDBPICT000568507868.jpg?alt=media&token=24d63657-bdc2-4425-8d87-1e4e3d482ec3",
+            "https://firebasestorage.googleapis.com/v0/b/quests-15b53.appspot.com/o/maxresdefault.jpg?alt=media&token=8556a9a3-6dfa-4743-9475-3a7f2f2cf710",
+            "https://firebasestorage.googleapis.com/v0/b/quests-15b53.appspot.com/o/solo-levelling-feature.jpg?alt=media&token=a57c6bb6-a02b-406e-927c-361155cecd07")
+
+        val complexity = arrayOf("Easy", "So-so", "Hard", "Nuts")
+        val company = arrayOf("A", "B", "C")
+        val desc = arrayOf("descA", "descB", "descC")
+        val genre = arrayOf("Touchy", "Notouchy", "Scary", "Boring")
+        val names = arrayOf("Athyes Pharcey",
+            "Gery",
+            "Gerey",
+            "Ealher" ,
+            "Jamas" ,
+            "Reyny",
+            "Atham",
+            "Amew",
+            "Wynstio",
+            "Thony")
+
+        for( x in 0 until 50 )
+        {
+            val q = hashMapOf(
+                "max_people" to Random.nextInt(1, 7),
+                "min_people" to Random.nextInt(8, 15),
+                "name" to names[Random.nextInt(0,6)],
+                "complexity" to complexity[Random.nextInt(0,3)],
+                "company" to company[Random.nextInt(0,2)],
+                "description" to desc[Random.nextInt(0,2)],
+                "duration" to Random.nextInt(30, 180),
+                "genre" to genre[Random.nextInt(0,2)],
+                "img_url" to pics[Random.nextInt(0,4)],
+                "cost" to Random.nextInt(200,1500),
+                "coords" to GeoPoint(Random.nextDouble(), Random.nextDouble()),
+                "address" to "address",
+                "phone" to "9(999)9999999"
+            )
+            db.collection("quests").add(q)
+        }
     }
 }

@@ -134,4 +134,7 @@
     <string name="unknown_error_message">Unknown error</string>
     <string name="item_order_quest_label">"Quest: "</string>
     <string name="item_order_comment_label">"Comment: "</string>
+    <string name="filter_difficulty_label">Difficulty</string>
+    <string name="filter_genre">Genre</string>
+    <string name="filter_duration">Duration</string>
 </resources>

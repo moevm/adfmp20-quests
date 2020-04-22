@@ -16,15 +16,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         tools:ignore="MissingConstraints">
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:id="@+id/search_edit"
-            android:imeOptions="actionSearch"
-            android:inputType="text"
-            android:maxLines="1"
-            android:text=""/>
+
     </LinearLayout>
 
     <LinearLayout
