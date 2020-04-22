@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
+import androidx.navigation.findNavController
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 
@@ -21,8 +22,8 @@ class BookingFragment : Fragment() {
         view.findViewById<DatePicker>(R.id.booking_date_picker).minDate = System.currentTimeMillis() - 1000
 
         view.findViewById<Button>(R.id.booking_reserve_button).setOnClickListener { v ->
-
-            addOrder(act);
+            addOrder(act) //adds order to local user object & updates db
+            v.findNavController().navigate(R.id.successFragment)
         }
         return view
     }
@@ -52,7 +53,9 @@ class BookingFragment : Fragment() {
         o.cost = o.people * act.quest?.cost.toString().toInt()
         o.status = "Reserved"
 
+
         act.user?.orders?.add(o);
+        act.orderNum = act.user?.orders?.size?.minus(1)!!
         act.user?.updateDB();
     }
 }

@@ -1,7 +1,6 @@
 package com.example.halp
 
 import com.google.firebase.Timestamp
-import java.text.SimpleDateFormat
 import java.util.*
 
 class Order {
@@ -20,7 +19,7 @@ class Order {
 
     var quest_id: String? = null
     var quest_date: Date? = null
-    var order_date: Date? = null;
+    var order_date: Date? = null
     var people = 0
     var cost = 0
     var status: String? = null

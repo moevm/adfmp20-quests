@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 class OrdersAdapter(val orders: ArrayList<Order>?, var act: MainActivity) :
@@ -45,6 +46,12 @@ class OrdersAdapter(val orders: ArrayList<Order>?, var act: MainActivity) :
         if( orders?.get(position)?.status.toString() == "PAYED" )
             holder.payButton.visibility = View.GONE
         else
-            holder.payButton.visibility = View.VISIBLE
+            holder.payButton.visibility = View.VISIBLE //TODO button to payment
+
+        holder.payButton.setOnClickListener { v ->
+            act.orderNum = position
+            v.findNavController().navigate(R.id.paymentFragment)
+
+        }
     }
 }

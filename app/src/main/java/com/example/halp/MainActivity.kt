@@ -19,6 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.GeoPoint
 import com.google.protobuf.LazyStringArrayList
 import kotlin.random.Random
+
 private const val PERMISSION_REQUEST = 10
 
 class MainActivity : AppCompatActivity()
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity()
     public lateinit var db: FirebaseFirestore
     public var user: User? = null
     public var quest: Quest? = null
+    public var orderNum: Int = -1
+
     lateinit var appBarConfiguration: AppBarConfiguration
 
     private var permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
