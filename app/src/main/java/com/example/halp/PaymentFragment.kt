@@ -15,8 +15,13 @@ class PaymentFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_payment_page, container, false)
 
         view.findViewById<Button>(R.id.payment_pay_button).setOnClickListener { v ->
+            val act = activity as MainActivity
+            act.user?.orders?.get(act.orderNum)?.status = "PAYED"
+            act.user?.updateDB()
+            act.orderNum = 1;
             v.findNavController().navigate(R.id.action_paymentFragment_to_navigation_orders)
         }
+
         return view
     }
 

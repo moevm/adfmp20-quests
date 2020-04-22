@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.GeoPoint
+import kotlinx.android.synthetic.main.fragment_quest_list.view.*
 
 class QuestListFragment : Fragment() {
 
@@ -17,14 +18,16 @@ class QuestListFragment : Fragment() {
                               savedInstanceState: Bundle?): View?
     {
         val view = inflater.inflate(R.layout.fragment_quest_list, container, false)
-
         view.findViewById<Button>(R.id.quest_list_filter_button).setOnClickListener { v ->
             v.findNavController().navigate(R.id.filterFragment)
         }
-
-        updateList(view);
-
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        updateList(view)
+        view.quest_list_recycle.adapter?.notifyDataSetChanged()
     }
 
     fun updateList(v: View) {
@@ -53,11 +56,9 @@ class QuestListFragment : Fragment() {
 
         val rv: RecyclerView = v.findViewById(R.id.quest_list_recycle)
         val rva = QuestListAdapter(quests, act)
+
         rv.adapter = rva
         rv.layoutManager = LinearLayoutManager(context)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        rva.notifyDataSetChanged();
     }
 }

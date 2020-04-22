@@ -62,7 +62,7 @@
     <string name="reserved_item_title">Reservation number</string>
     <string name="reserved_item_number">0</string>
     <string name="reserved_order_date">01.01.1970</string>
-    <string name="reserved_item_reservation_time_label">Reservation date</string>
+    <string name="reserved_item_reservation_time_label">Quest date</string>
     <string name="reserved_item_reservation_time">05.05.05</string>
     <string name="reserved_item_people_label">Number of persons</string>
     <string name="reserved_item_people">0</string>
@@ -132,4 +132,6 @@
     <string name="network_error_message">Network error</string>
     <string name="remote_error_message">Remote server error</string>
     <string name="unknown_error_message">Unknown error</string>
+    <string name="item_order_quest_label">"Quest: "</string>
+    <string name="item_order_comment_label">"Comment: "</string>
 </resources>

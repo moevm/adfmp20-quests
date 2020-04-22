@@ -13,6 +13,8 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.firestore.*
 import java.sql.Timestamp
 import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashSet
 
 class LoginFragment : Fragment() {
 
@@ -39,7 +41,13 @@ class LoginFragment : Fragment() {
                           us.phone = doc["phone"].toString()
                           us.mail = doc["mail"].toString()
                           us.name = doc["name"].toString()
-                          us.orders = doc["orders"] as ArrayList<Order>
+                          for( order in doc["orders"] as ArrayList<HashMap<String, Any>> )
+                          {
+                              val o = Order()
+                              for( (key, value) in order )
+                                  o[key] = value;
+                              us.orders.add(o)
+                          }
                           us.birthday = doc.getDate("birthday")
                           us.password = doc["password"].toString()
 

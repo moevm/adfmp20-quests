@@ -9,7 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.firestore.FirebaseFirestore
 
 class QuestListAdapter(val quests: ArrayList<Quest>, var act: MainActivity) :
     RecyclerView.Adapter<QuestListAdapter.QuestItemHolder>()
@@ -75,10 +74,7 @@ class QuestListAdapter(val quests: ArrayList<Quest>, var act: MainActivity) :
                         holder.like.setBackgroundColor(Color.RED)
                     }
 
-                    act.user!!.id?.let {
-                        it1 -> act.db.collection("users")
-                    .document(it1).update("favourites", act.user!!.favourites)
-                    }
+                    act.user!!.updateDB();
                 }
             }
         }

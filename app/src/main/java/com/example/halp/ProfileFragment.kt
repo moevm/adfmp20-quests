@@ -20,9 +20,9 @@ class ProfileFragment : Fragment() {
             v.findNavController().navigate(R.id.action_navigation_profile_to_accountSettingsFragment)
         }
 
-        view.findViewById<Button>(R.id.profile_account_preferences_button).setOnClickListener { v ->
+       /* view.findViewById<Button>(R.id.profile_account_preferences_button).setOnClickListener { v ->
             v.findNavController().navigate(R.id.action_navigation_profile_to_preferencesFragment)
-        }
+        }*/
 
         view.findViewById<Button>(R.id.profile_account_about_button).setOnClickListener { v ->
             v.findNavController().navigate(R.id.action_navigation_profile_to_aboutFragment)
