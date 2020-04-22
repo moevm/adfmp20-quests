@@ -113,7 +113,7 @@ class MapFragment : Fragment(), UserLocationObjectListener,
         mapObjects = mapView.getMap().getMapObjects().addCollection();
 
         val act = activity as MainActivity
-        if(act.quest != null) ROUTE_END_LOCATION = act.quest!!.coords
+        if(act.quest != null) ROUTE_END_LOCATION = Point(act.quest!!.coords.latitude, act.quest!!.coords.longitude)
         drivingRouter = DirectionsFactory.getInstance().createDrivingRouter();
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this.activity!!)
         getLastLocation()
