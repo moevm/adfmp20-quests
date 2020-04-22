@@ -8,7 +8,7 @@ class Order {
     var quest_date: Date? = null
     var order_date: Date? = null;
     var people = 0
-    var cost = 0f
+    var cost = 0
     var status: String? = null
     var comment: String? = null
 }

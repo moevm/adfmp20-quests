@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="-129dp"
         tools:layout_editor_absoluteY="235dp">
@@ -16,7 +12,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
+            android:id="@+id/item_order_order_date"
             android:text="@string/reserved_order_date" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_order_quest_label" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/item_order_quest"
+                android:text="@string/reserved_item_order_status" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +43,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/reserved_reservation_date"
+                android:id="@+id/item_order_quest_date"
                 android:text="@string/reserved_item_reservation_time" />
         </LinearLayout>
 
@@ -46,7 +59,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/reserved_people"
+                android:id="@+id/item_order_persons"
                 android:text="@string/reserved_item_people" />
         </LinearLayout>
 
@@ -62,7 +75,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/reserved_price"
+                android:id="@+id/item_order_cost"
                 android:text="@string/reserved_item_price" />
         </LinearLayout>
 
@@ -78,16 +91,30 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/reserved_status"
+                android:id="@+id/item_order_status"
+                android:text="@string/reserved_item_order_status" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_order_comment_label" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/item_order_comment"
                 android:text="@string/reserved_item_order_status" />
         </LinearLayout>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/reserved_pay"
+            android:id="@+id/item_order_pay"
             android:text="@string/reserved_item_payment" />
 
     </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>

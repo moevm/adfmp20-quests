@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.yandex.android:directions:3.5.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/af1d77c6490a536a28f9d73d89a5ea8b/jetified-directions-3.5.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/af1d77c6490a536a28f9d73d89a5ea8b/jetified-directions-3.5.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8c9047e44e0b95791c77d290283bdd19/jetified-directions-3.5.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8c9047e44e0b95791c77d290283bdd19/jetified-directions-3.5.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

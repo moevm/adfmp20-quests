@@ -31,8 +31,4 @@
             android:id="@+id/quest_list_recycle"/>
 
     </LinearLayout>
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

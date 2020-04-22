@@ -22,7 +22,7 @@ class QuestListFragment : Fragment() {
             v.findNavController().navigate(R.id.filterFragment)
         }
 
-        updateList(view);
+        updateList(view)
 
         return view
     }
@@ -53,11 +53,8 @@ class QuestListFragment : Fragment() {
 
         val rv: RecyclerView = v.findViewById(R.id.quest_list_recycle)
         val rva = QuestListAdapter(quests, act)
+
         rv.adapter = rva
         rv.layoutManager = LinearLayoutManager(context)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
     }
 }
