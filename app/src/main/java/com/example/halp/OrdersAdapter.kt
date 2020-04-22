@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 class OrdersAdapter(val orders: ArrayList<Order>?, var act: MainActivity) :
     RecyclerView.Adapter<OrdersAdapter.OrderItemHolder>()
 {
-
     class OrderItemHolder(view: View) :
         RecyclerView.ViewHolder(view)
     {

@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
-import androidx.navigation.findNavController
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 

@@ -46,7 +46,7 @@ class LoginFragment : Fragment() {
                               val o = Order()
                               for( (key, value) in order )
                                   o[key] = value;
-                              print("a")
+                              us.orders.add(o)
                           }
                           us.birthday = doc.getDate("birthday")
                           us.password = doc["password"].toString()

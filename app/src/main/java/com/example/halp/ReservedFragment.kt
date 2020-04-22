@@ -26,6 +26,7 @@ class ReservedFragment : Fragment() {
         val act = activity as MainActivity
         if( act.user == null )
             view.findNavController().navigate(R.id.loadingFragment)
+        view.reserved_list_recycler.adapter?.notifyDataSetChanged()
     }
 
     fun updateList(v: View) {
