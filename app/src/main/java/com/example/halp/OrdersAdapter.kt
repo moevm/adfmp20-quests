@@ -20,9 +20,9 @@ class OrdersAdapter(val orders: ArrayList<Order>?, var act: MainActivity) :
         var people: TextView = view.findViewById(R.id.item_order_persons)
         var questDate: TextView = view.findViewById(R.id.item_order_quest_date)
         var quest: TextView = view.findViewById(R.id.item_order_quest)
-        var status: Button = view.findViewById(R.id.item_order_status)
+        var status: TextView = view.findViewById(R.id.item_order_status)
 
-        var payButton: Button = view.findViewById(R.id.item_order_pay)
+        var payButton: Button = view.findViewById(R.id.item_order_pay_button)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderItemHolder {

@@ -114,7 +114,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/item_order_pay"
+            android:id="@+id/item_order_pay_button"
             android:text="@string/reserved_item_payment" />
 
     </LinearLayout>

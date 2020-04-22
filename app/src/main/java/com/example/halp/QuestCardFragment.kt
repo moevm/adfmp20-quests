@@ -20,7 +20,6 @@ class QuestCardFragment : Fragment() {
         view.findViewById<Button>(R.id.quest_card_booking_button).setOnClickListener { v ->
             v.findNavController().navigate(R.id.action_questCardFragment_to_bookingFragment)
         }
-
         return view
     }
 

@@ -24,9 +24,6 @@ class BookingFragment : Fragment() {
         view.findViewById<Button>(R.id.booking_reserve_button).setOnClickListener { v ->
 
             addOrder(act);
-            //act.user?.updateDB()
-
-            //v.findNavController().navigate(R.id.action_bookingFragment_to_successFragment)
         }
         return view
     }
@@ -44,7 +41,7 @@ class BookingFragment : Fragment() {
     }
 
     fun addOrder(act: MainActivity) {
-        val o: Order = Order()
+        val o = Order()
         o.comment = view?.findViewById<TextInputEditText>(R.id.booking_comment)?.text.toString()
         o.people = view?.findViewById<TextInputEditText>(R.id.booking_people)?.text.toString().toInt()
         o.quest_id = act.quest?.id
