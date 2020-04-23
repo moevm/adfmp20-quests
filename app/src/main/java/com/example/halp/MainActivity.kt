@@ -25,7 +25,6 @@ private const val PERMISSION_REQUEST = 10
 
 class MainActivity : AppCompatActivity()
 {
-    var db: FirebaseFirestore = FirebaseFirestore.getInstance()
     var user: User? = null
     var quest: Quest? = null
     var orderNum: Int = -1
@@ -34,6 +33,7 @@ class MainActivity : AppCompatActivity()
 
 
     lateinit var appBarConfiguration: AppBarConfiguration
+    lateinit var db: FirebaseFirestore
 
     private var permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
     fun checkPermission(context: Context, permissionArray: Array<String>) : Boolean{
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity()
                 requestPermissions(permissions, PERMISSION_REQUEST)
             }
         }
-
+        db = FirebaseFirestore.getInstance()
         //randomFill();
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title
