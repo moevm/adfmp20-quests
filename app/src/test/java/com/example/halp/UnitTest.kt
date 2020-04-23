@@ -18,7 +18,7 @@ class UnitTest {
         assertEquals(4, 2 + 2)
     }
 
-    @Test
+    /*@Test
     fun ordersAdapter_correct_getItemCount(){
         val sampleOrder = Order()
         val activity = MainActivity()
@@ -39,9 +39,9 @@ class UnitTest {
             adapter.orders?.plusAssign(sampleOrder)
 
         assertEquals(adapter.getItemCount(), 69)
-    }
+    }*/
 
-    @Test
+    /*@Test
     fun questListAdapter_correct_getItemCount(){
         val sampleQuest = Quest()
         val activity = MainActivity()
@@ -62,7 +62,7 @@ class UnitTest {
             adapter.quests.plusAssign(sampleQuest)
 
         assertEquals(adapter.getItemCount(), 69)
-    }
+    }*/
 
     @Test
     fun order_correct_set(){
