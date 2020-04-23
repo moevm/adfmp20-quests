@@ -20,9 +20,9 @@ class FavouritesListFragment : Fragment() {
     {
         val view = inflater.inflate(R.layout.fragment_favourites_list, container, false)
 
-        view.findViewById<Button>(R.id.quest_list_filter_button).setOnClickListener { v ->
+        /*view.findViewById<Button>(R.id.quest_list_filter_button).setOnClickListener { v ->
             v.findNavController().navigate(R.id.filterFragment)
-        }
+        }*/
 
         return view
     }
@@ -32,9 +32,8 @@ class FavouritesListFragment : Fragment() {
         val act = activity as MainActivity
         if( act.user?.favourites?.isNotEmpty()!! )
             act.user?.favourites?.let {
-                act.db.collection("quests").whereIn(FieldPath.documentId(),
-                    it
-                ).get().addOnSuccessListener { snapshot ->
+                act.db.collection("quests").whereIn(FieldPath.documentId(), it)
+                    .get().addOnSuccessListener { snapshot ->
                     for( doc in snapshot ) {
                         val q = Quest()
                         q.id = doc.id

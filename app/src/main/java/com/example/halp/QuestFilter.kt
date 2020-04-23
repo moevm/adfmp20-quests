@@ -27,12 +27,15 @@ class QuestFilter(val peopleMax: Int = 100,
             .whereLessThanOrEqualTo("max_people", peopleMax)
             .whereGreaterThanOrEqualTo("min_people", peopleMin)*/
 
-        if( difficulty != "" )
-            query = query.whereEqualTo("difficulty", difficulty)
-        if( genre != "" )
-            query = query.whereEqualTo("genre", genre)
         if( name != "" )
             query = query.whereEqualTo("name", name)
+
+        if( difficulty != "" )
+            query = query.whereEqualTo("complexity", difficulty)
+
+        if( genre != "" )
+            query = query.whereEqualTo("genre", genre)
+
 
         return query
     }

@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.include_quest_main_info.view.*
 
 class QuestListAdapter(val quests: ArrayList<Quest>, var act: MainActivity) :
     RecyclerView.Adapter<QuestListAdapter.QuestItemHolder>()
@@ -24,6 +25,7 @@ class QuestListAdapter(val quests: ArrayList<Quest>, var act: MainActivity) :
         var complexity: TextView = view.findViewById(R.id.quest_item_complexity)
         var cost: TextView = view.findViewById(R.id.quest_item_cost)
         var like: Button = view.findViewById(R.id.quest_item_like)
+        var genre: TextView = view.quest_item_genre
 
         var informationButton: Button = view.findViewById(R.id.quest_item_button)
         var image: ImageView = view.findViewById(R.id.quest_item_image)
@@ -45,6 +47,7 @@ class QuestListAdapter(val quests: ArrayList<Quest>, var act: MainActivity) :
         holder.complexity.text = quests[position].complexity
         holder.duration.text = (quests[position].duration.toString() + " min")
         holder.cost.text = quests[position].cost.toString()
+        holder.genre.text = quests[position].genre
 
         holder.informationButton.setOnClickListener { v ->
             act.quest = quests[position]

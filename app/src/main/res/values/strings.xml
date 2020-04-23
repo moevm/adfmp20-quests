@@ -29,12 +29,12 @@
     <string name="quest_phone"><![CDATA[+&(&&&)&&&&&&&]]></string>
     <string name="quest_address">ETU</string>
     <string name="quest_reserve_button">Reserve</string>
-    <string name="quest_company_name">Company</string>
+    <string name="quest_company_name">Company  </string>
     <string name="quest_name">Quest</string>
     <string name="quest_people_number">6–10</string>
     <string name="quest_duration">55 min</string>
     <string name="quest_difficutly">INSANE</string>
-    <string name="loading_text">Ti kto takoi? Иди регайся</string>
+    <string name="loading_text">Time to sign up</string>
     <string name="loading_image_cd">Looking…</string>
     <string name="quest_image_cd">image</string>
     <string name="quest_list_name_hint">Quest name</string>
@@ -137,4 +137,5 @@
     <string name="filter_difficulty_label">Difficulty</string>
     <string name="filter_genre">Genre</string>
     <string name="filter_duration">Duration</string>
+    <string name="quest_item_genre_label">Genre</string>
 </resources>

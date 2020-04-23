@@ -55,7 +55,6 @@ class QuestListFragment : Fragment() {
                 quests.add(q)
             }
         }.addOnCompleteListener {
-            val act = activity as MainActivity
             val rv: RecyclerView = view.findViewById(R.id.quest_list_recycle)
             val rva = QuestListAdapter(quests, act)
 

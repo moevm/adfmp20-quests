@@ -22,7 +22,12 @@ class FilterFragment : Fragment() {
 
         view.findViewById<Button>(R.id.filter_search_button).setOnClickListener { v ->
             getFilter(view);
-            v.findNavController().navigate(R.id.action_filterFragment_to_navigation_search)
+            v.findNavController().popBackStack()
+        }
+
+        view.filter_reset_button.setOnClickListener { v ->
+            (activity as MainActivity).filterQuests = null
+            v.findNavController().popBackStack()
         }
 
         return view
@@ -30,31 +35,31 @@ class FilterFragment : Fragment() {
 
     fun setupSeekbars(v: View)
     {
-        v.filter_duration.setOnRangeSeekbarChangeListener { minValue, maxValue ->
+        /*v.filter_duration.setOnRangeSeekbarChangeListener { minValue, maxValue ->
             v.filter_duration_max.setText(maxValue.toString())
             v.filter_duration_min.setText(minValue.toString())
-        }
+        }*/
 
         v.filter_price.setOnRangeSeekbarChangeListener { minValue, maxValue ->
             v.filter_price_max.setText(maxValue.toString())
             v.filter_price_min.setText(minValue.toString())
         }
 
-        v.filter_people.setOnRangeSeekbarChangeListener { minValue, maxValue ->
+        /*v.filter_people.setOnRangeSeekbarChangeListener { minValue, maxValue ->
             v.filter_people_max.setText(maxValue.toString())
             v.filter_people_min.setText(minValue.toString())
-        }
+        }*/
     }
 
     fun setupDropdowns(v: View)
     {
-        val difficultyList = arrayOf("Easy", "So-so", "Hard", "Nuts")
+        val difficultyList = arrayOf("","Easy", "So-so", "Hard", "Nuts")
         val diffAdapter =
             context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_item, difficultyList) }
         diffAdapter?.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         v.filter_difficulty.adapter = diffAdapter
 
-        val genresList = arrayOf("Touchy", "Notouchy", "Scary", "Boring")
+        val genresList = arrayOf("","Touchy", "Notouchy", "Scary", "Boring")
         val genreAdapter =
             context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_item, genresList) }
         genreAdapter?.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
@@ -70,12 +75,12 @@ class FilterFragment : Fragment() {
     fun getFilter(v: View)
     {
         (activity as MainActivity).filterQuests = QuestFilter(
-            v.filter_people_max.text.toString().toInt(),
-            v.filter_people_min.text.toString().toInt(),
+           0,
+            0,
             v.filter_price_min.text.toString().toInt(),
             v.filter_price_max.text.toString().toInt(),
-            v.filter_duration_max.text.toString().toInt(),
-            v.filter_duration_min.text.toString().toInt(),
+            0,
+           0,
             v.filter_difficulty.selectedItem.toString(),
             v.filter_genre.selectedItem.toString(),
             v.filter_name.text.toString()
